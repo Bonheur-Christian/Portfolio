@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="py-6">
+    <div className="flex py-6 justify-center mx-auto">
       <p className="flex items-center font-medium text-md text-white text-center">
         Developed With
         <img src="/svg/flower.svg" alt="Love" width={30} />

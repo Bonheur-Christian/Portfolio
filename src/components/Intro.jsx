@@ -1,3 +1,5 @@
+import { FaArrowAltCircleDown } from "react-icons/fa";
+
 function Intro() {
   return (
     <div className="pb-6">
