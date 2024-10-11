@@ -1,3 +1,8 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
+import "../styles.css";
+
 function Testimonials() {
   const Testimonials = [
     {
@@ -26,25 +31,45 @@ function Testimonials() {
     },
   ];
   return (
-    <div>
+    <div className="ps-24 py-32 space-y-24" id="testimonials">
       <div className="flex gap-2 items-end">
         <img src="svg/line1.svg" alt="Line" />
         <h1 className="text-4xl font-medium text-white">
           What Our Clients Say
         </h1>
       </div>
-      <div className="flex justify-evenly py-12">
+      <Swiper
+        modules={[Navigation, Autoplay, Pagination]}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={true}
+        speed={3000}
+        grabCursor={true}
+        breakpoints={{
+          640: { slidesPerView: 2, spaceBetween: 10, centeredSlides: false },
+          1024: { slidesPerView: 3, spaceBetween: 30, centeredSlides: false },
+        }}
+        // slidesPerView={3}
+        spaceBetween={10}
+        centeredSlides={true}
+        pagination={{ clickable: true }}
+        className="space-x-12"
+      >
         {Testimonials.map((item, index) => (
-          <div
-            className="bg-[#D9D9D9]/15 rounded-xl w-[23%] px-4 py-4 space-y-6"
-            key={index}
-          >
-            <img src="/svg/quote.svg" alt="Quotation mark" />
-            <p className="text-white">{item.message}</p>
-            <img src={item.image} alt="" className="rounded-full" width={40} />
-          </div>
+          <SwiperSlide key={index} className="pb-12">
+            <div className="bg-[#D9D9D9]/15 rounded-xl w-full px-4 py-4 space-y-6">
+              <img src="/svg/quote.svg" alt="Quotation mark" />
+              <p className="text-white">{item.message}</p>
+              <img
+                src={item.image}
+                alt=""
+                className="rounded-full mx-auto"
+                width={40}
+              />
+              <p className="text-sm text-white text-center">{item.name}</p>
+            </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 }

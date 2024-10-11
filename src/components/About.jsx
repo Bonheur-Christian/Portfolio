@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="ps-24 pt-12 space-y-10" title="About me">
+    <div className="ps-24 pt-12 space-y-10" title="About me" id="about">
       <div className="flex gap-2 items-end">
         <img src="svg/line1.svg" alt="Line" />
         <h1 className="text-4xl font-medium text-white">About</h1>
