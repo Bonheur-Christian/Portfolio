@@ -1,9 +1,9 @@
 function About() {
   return (
-    <div className="ps-24 pt-12 space-y-10" title="About me" id="about">
+    <div className="lg:ps-24 sm:px-4 pt-12 space-y-10" title="About me" id="about">
       <div className="flex gap-2 items-end">
-        <img src="svg/line1.svg" alt="Line" />
-        <h1 className="text-4xl font-medium text-white">About</h1>
+        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%]" />
+        <h1 className="lg:text-4xl sm:text-2xl font-medium text-white">About</h1>
       </div>
       <div className="border-[0.2rem] border-[#ff4900] w-[100%] text-white text-xl space-y-12 px-10 py-10 rounded-xl ">
         <p>
@@ -14,7 +14,7 @@ function About() {
           voluptate provident perspiciatis quos cumque ullam! Illo vitae dolores
           velit ipsam, ut nam nulla aliquid!
         </p>
-        <p>
+        <p className="sm:hidden lg:block">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
           atque accusantium sunt odit ut veritatis quisquam dolorem porro,
           itaque omnis modi magnam possimus voluptas perferendis distinctio
@@ -30,9 +30,9 @@ function About() {
           </h2>
           <img src="/svg/line2.svg" alt="line" />
         </div>
-        <div className="flex gap-80">
-          <div className="w-[30%] space-y-12 pt-6">
-            <p className="font-lato text-2xl text-white  font-extrabold">
+        <div className="flex lg:flex-row sm:flex-col lg:gap-80 sm:gap-12">
+          <div className="lg:w-[30%] sm:w-[100%] space-y-12 pt-6">
+            <p className="font-lato lg:text-2xl sm:text-xl sm:text-center lg:text-start text-white  font-extrabold">
               You can’t use up creativity. The more you use,the more have in
               your significant mind.
             </p>
@@ -43,8 +43,8 @@ function About() {
               id dolorum.
             </p>
           </div>
-          <div className="w-[30%] space-y-6 pt-6">
-            <p className="font-lato text-2xl text-white  font-extrabold w-[60%]">
+          <div className="lg:w-[30%] sm:w-[100%] space-y-6 pt-6">
+            <p className="font-lato lg:text-2xl sm:text-xl text-white  font-extrabold lg:w-[60%] sm:w-[100%] lg:text-start sm:text-center">
               Any Type Of Query & Discussion.
             </p>
             <p className="text-white font-lato">
@@ -52,7 +52,7 @@ function About() {
               Explicabo sed, soluta ullam suscipit iusto obcaecati et at ipsum
               incidunt aperiam in voluptas beatae commodi.
             </p>
-            <p className="italic text-[#ff4900] underline">info@gmail.com</p>
+            <p className="italic text-[#ff4900] underline lg:text-start sm:text-center">info@gmail.com</p>
           </div>
         </div>
       </div>

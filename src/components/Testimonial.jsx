@@ -31,10 +31,10 @@ function Testimonials() {
     },
   ];
   return (
-    <div className="ps-24 py-32 space-y-24" id="testimonials">
+    <div className="lg:ps-24 sm:ps-4 py-32 space-y-24" id="testimonials">
       <div className="flex gap-2 items-end">
-        <img src="svg/line1.svg" alt="Line" />
-        <h1 className="text-4xl font-medium text-white">
+        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%]" />
+        <h1 className="lg:text-4xl sm:text-2xl font-medium text-white">
           What Our Clients Say
         </h1>
       </div>
@@ -56,7 +56,7 @@ function Testimonials() {
       >
         {Testimonials.map((item, index) => (
           <SwiperSlide key={index} className="pb-12">
-            <div className="bg-[#D9D9D9]/15 rounded-xl w-full px-4 py-4 space-y-6">
+            <div className="bg-[#D9D9D9]/15 rounded-xl lg:w-full sm:w-[90%] lg:ms-0 sm:ms-4 px-4 py-4 space-y-6">
               <img src="/svg/quote.svg" alt="Quotation mark" />
               <p className="text-white">{item.message}</p>
               <img

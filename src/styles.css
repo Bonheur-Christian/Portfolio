@@ -3,6 +3,13 @@
     opacity: 1;
     border-radius: 1rem;
     width: 2rem;
+
+}
+
+
+.swiper-pagination {
+
+    padding-right: 6rem;
 }
 
 .swiper-pagination-bullet-active {

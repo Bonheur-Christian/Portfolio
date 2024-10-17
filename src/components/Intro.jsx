@@ -3,9 +3,9 @@ import { FaArrowAltCircleDown } from "react-icons/fa";
 function Intro() {
   return (
     <div className="pb-6">
-      <div className="ps-24 flex items-center justify-center">
-        <div>
-          <h1 className="text-white text-7xl pt-1 font-bold ms-[-5rem] z-30 absolute flex flex-col">
+      <div className="lg:ps-24 sm:ps-2 flex sm:flex-col-reverse sm:space-y-12 lg:flex-row items-center justify-center">
+        <div className="sm:hidden lg:block">
+          <h1 className="text-white lg:text-7xl sm:text-2xl pt-1 font-bold ms-[-5rem] z-30 absolute flex flex-col">
             Bonheur
             <span className="ps-24">Christian</span>
           </h1>
@@ -20,22 +20,21 @@ function Intro() {
         <img
           src="images/profile.png"
           alt="Profile"
-          width={400}
-          height={30}
-          className="z-20"
+        
+          className="z-20 sm:w-[70%] lg:w-[30%]"
         />
 
-        <div className="ps-20 w-[40%] mt-[-1rem] space-y-12">
+        <div className="lg:ps-20 sm:px-4 lg:w-[40%] sm:w-[100%] lg:mt-[-1rem] sm:mt-0 space-y-12">
           <h1 className="text-4xl font-medium text-white text-center">
             I’m Software Developer Based in RWANDA
           </h1>
           <p className="text-white text-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            voluptate, cumque optio nobis sequi fuga alias iure beatae
-            voluptates vel animi voluptatibus quaerat quia eaque velit nam iusto
-            error harum voluptatem natus esse.
+            My Full Names are MUHUMURE Bonheur Christian. I am specialized in
+            software and web development. Despite of Developing many outstanding
+            web sites for companies, I am also interested In Embedded systems. I
+            actually like to see functioning tool which I built.
           </p>
-          <button className="bg-[#ff4900] rounded-full px-10 py-3 text-white font-medium">
+          <button className="bg-[#ff4900] rounded-full px-10 py-3 text-white font-medium mx-auto flex ">
             View my Work
           </button>
         </div>

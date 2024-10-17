@@ -8,7 +8,7 @@ import Testimonials from "../components/Testimonial";
 
 function Home() {
   return (
-    <div className="space-y-2 w-[80%] mx-auto">
+    <div className="space-y-2 lg:w-[80%] sm:w-[100%] mx-auto">
       <LandingBar />
       <Intro />
       <div className="bg-[#1F1E1E] h-24 -ms-48 -me-48"></div>

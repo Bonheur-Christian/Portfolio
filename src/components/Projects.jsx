@@ -31,10 +31,10 @@ function Projects() {
   ];
 
   return (
-    <div className="ps-24 h-screen space-y-24" id="projects">
+    <div className="lg:ps-24 sm:ps-4 h-screen space-y-24" id="projects">
       <div className="flex gap-2 items-end">
-        <img src="svg/line1.svg" alt="Line" />
-        <h1 className="text-4xl font-medium text-white">Projects</h1>
+        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%]"/>
+        <h1 className="lg:text-4xl sm:text-2xl font-medium text-white">Projects</h1>
       </div>
       <Swiper
         modules={[Navigation, Autoplay, Pagination]}
@@ -51,13 +51,13 @@ function Projects() {
         className=""
       >
         {Projects.map((item, index) => (
-          <SwiperSlide key={index} className="space-y-6 pb-32">
+          <SwiperSlide key={index} className="space-y-6 lg:pb-32 sm:pb-16">
             <img
               src={item.image}
               alt="Image of the Object."
-              className="h-[20rem] w-[40rem]"
+              className="lg:h-[20rem] sm:h-[15rem] lg:w-[40rem] sm:w-[20rem]"
             />
-            <div className="ps-12 space-y-8">
+            <div className="lg:ps-12 sm:ps-4 space-y-8">
               <h1 className="text-2xl text-white font-extrabold">{item.name}</h1>
               <p className="text-white font-lato">{item.desc}</p>
               <div className="flex gap-6 items-center text-white">
