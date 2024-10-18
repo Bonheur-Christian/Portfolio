@@ -31,9 +31,9 @@ function Projects() {
   ];
 
   return (
-    <div className="lg:ps-24 sm:ps-4 h-screen space-y-24" id="projects">
+    <div className="lg:ps-24 sm:ps-4 md:w-[80%] lg:w-[100%] sm:w-[100%] mx-auto h-screen space-y-24" id="projects">
       <div className="flex gap-2 items-end">
-        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%]"/>
+        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%] md:w-[2%]"/>
         <h1 className="lg:text-4xl sm:text-2xl font-medium text-white">Projects</h1>
       </div>
       <Swiper

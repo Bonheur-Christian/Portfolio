@@ -31,9 +31,9 @@ function Testimonials() {
     },
   ];
   return (
-    <div className="lg:ps-24 sm:ps-4 py-32 space-y-24" id="testimonials">
+    <div className="lg:ps-24 md:w-[80%] sm:w-[100%] lg:w-[100%] mx-auto sm:ps-4 py-32 space-y-24" id="testimonials">
       <div className="flex gap-2 items-end">
-        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%]" />
+        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%] md:w-[2%]" />
         <h1 className="lg:text-4xl sm:text-2xl font-medium text-white">
           What Our Clients Say
         </h1>
@@ -56,7 +56,7 @@ function Testimonials() {
       >
         {Testimonials.map((item, index) => (
           <SwiperSlide key={index} className="pb-12">
-            <div className="bg-[#D9D9D9]/15 rounded-xl lg:w-full sm:w-[90%] lg:ms-0 sm:ms-4 px-4 py-4 space-y-6">
+            <div className="bg-[#D9D9D9]/15 rounded-xl lg:w-full sm:w-[90%] md:w-[100%] lg:ms-0 sm:ms-4 px-4 py-4 space-y-6">
               <img src="/svg/quote.svg" alt="Quotation mark" />
               <p className="text-white">{item.message}</p>
               <img

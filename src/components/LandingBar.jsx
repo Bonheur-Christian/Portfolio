@@ -39,7 +39,7 @@ function LandingBar() {
   }, [scrolled]);
 
   return (
-    <div>
+    <div className="md:w-[100%]">
       <nav className="text-white flex justify-between lg:px-12 sm:px-4 py-12">
         <div>
           <a href="/">
@@ -55,22 +55,22 @@ function LandingBar() {
           className={`${
             open
               ? "pt-20 flex flex-col space-y-4 me-[-8rem]"
-              : "sm:hidden lg:flex items-center gap-24"
+              : "sm:hidden lg:flex md:flex items-center gap-24"
           }`}
         >
-          <ul className="lg:flex sm:space-y-4 items-center gap-24">
+          <ul className="lg:flex md:flex sm:space-y-4 md:space-y-0 items-center  md:gap-16 md:px-4 lg:gap-24">
             {Links.map((item, index) => (
               <li className="underline-animation" key={index}>
                 <a href={item.dest}>{item.link}</a>
               </li>
             ))}
           </ul>
-          <button className="border border-3 text-xl border-[#FF4900] font-semibold rounded-full px-4 py-2 hover:bg-[#FF4900] lg:flex items-center gap-4 sm:hidden md:flex">
+          <button className="border border-3 text-xl border-[#FF4900] font-semibold rounded-full px-4 py-2 hover:bg-[#FF4900] lg:flex items-center gap-4 sm:hidden md:hidden">
             <FiDownload />
             Download CV
           </button>
         </div>
-        <div className="sm:block lg:hidden duration-700" onClick={toggleMenu}>
+        <div className="sm:block lg:hidden md:hidden duration-700" onClick={toggleMenu}>
           {open ? (
             <IoCloseSharp size={35} color="#ff4900" />
           ) : (

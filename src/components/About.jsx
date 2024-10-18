@@ -1,8 +1,8 @@
 function About() {
   return (
-    <div className="lg:ps-24 sm:px-4 pt-12 space-y-10" title="About me" id="about">
+    <div className="lg:ps-24 sm:px-4 md:w-[80%] sm:w-[100%] lg:w-[100%] mx-auto pt-12 space-y-10" title="About me" id="about">
       <div className="flex gap-2 items-end">
-        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%]" />
+        <img src="svg/line1.svg" alt="Line" className="lg:w-[1%] sm:w-[3%] md:w-[2%]" />
         <h1 className="lg:text-4xl sm:text-2xl font-medium text-white">About</h1>
       </div>
       <div className="border-[0.2rem] border-[#ff4900] w-[100%] text-white text-xl space-y-12 px-10 py-10 rounded-xl ">
@@ -14,7 +14,7 @@ function About() {
           voluptate provident perspiciatis quos cumque ullam! Illo vitae dolores
           velit ipsam, ut nam nulla aliquid!
         </p>
-        <p className="sm:hidden lg:block">
+        <p className="sm:hidden lg:block md:block">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
           atque accusantium sunt odit ut veritatis quisquam dolorem porro,
           itaque omnis modi magnam possimus voluptas perferendis distinctio
@@ -32,7 +32,7 @@ function About() {
         </div>
         <div className="flex lg:flex-row sm:flex-col lg:gap-80 sm:gap-12">
           <div className="lg:w-[30%] sm:w-[100%] space-y-12 pt-6">
-            <p className="font-lato lg:text-2xl sm:text-xl sm:text-center lg:text-start text-white  font-extrabold">
+            <p className="font-lato lg:text-2xl md:text-2xl sm:text-xl sm:text-center lg:text-start text-white  font-extrabold">
               You can’t use up creativity. The more you use,the more have in
               your significant mind.
             </p>

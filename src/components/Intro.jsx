@@ -2,7 +2,7 @@ import { FaArrowAltCircleDown } from "react-icons/fa";
 
 function Intro() {
   return (
-    <div className="pb-6">
+    <div className="pb-6 md:w-[80%] sm:w-[100%] lg:w-[100%] mx-auto">
       <div className="lg:ps-24 sm:ps-2 flex sm:flex-col-reverse sm:space-y-12 lg:flex-row items-center justify-center">
         <div className="sm:hidden lg:block">
           <h1 className="text-white lg:text-7xl sm:text-2xl pt-1 font-bold ms-[-5rem] z-30 absolute flex flex-col">
@@ -21,7 +21,7 @@ function Intro() {
           src="images/profile.png"
           alt="Profile"
         
-          className="z-20 sm:w-[70%] lg:w-[30%]"
+          className="z-20 sm:w-[70%] md:w-[40%] lg:w-[30%]"
         />
 
         <div className="lg:ps-20 sm:px-4 lg:w-[40%] sm:w-[100%] lg:mt-[-1rem] sm:mt-0 space-y-12">
