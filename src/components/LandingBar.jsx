@@ -55,7 +55,7 @@ function LandingBar() {
           className={`${
             open
               ? "pt-20 flex flex-col space-y-4 me-[-8rem]"
-              : "sm:hidden"
+              : "sm:hidden lg:flex items-center gap-24"
           }`}
         >
           <ul className="lg:flex sm:space-y-4 items-center gap-24">
