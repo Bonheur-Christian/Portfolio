@@ -23,7 +23,6 @@ function LandingBar() {
   }, []);
   const Links = [
     { link: "Home", dest: "/" },
-    { link: "About", dest: "#about" },
     { link: "Projects", dest: "#project" },
     { link: "Contacts", dest: "#contacts" },
   ];
@@ -40,7 +39,7 @@ function LandingBar() {
 
   return (
     <div className="md:w-[100%]">
-      <nav className="text-white flex justify-between lg:px-12 sm:px-4 py-12">
+      <nav className="text-gray-700 flex justify-between items-center py-12">
         <div>
           <a href="/">
             <img
@@ -61,11 +60,11 @@ function LandingBar() {
           <ul className="lg:flex md:flex sm:space-y-4 md:space-y-0 items-center  md:gap-16 md:px-4 lg:gap-24">
             {Links.map((item, index) => (
               <li className="underline-animation" key={index}>
-                <a href={item.dest}>{item.link}</a>
+                <a href={item.dest} className="font-medium cursor-pointer">{item.link}</a>
               </li>
             ))}
           </ul>
-          <button className="border border-3 text-xl border-[#FF4900] font-semibold rounded-full px-4 py-2 hover:bg-[#FF4900] lg:flex items-center gap-4 sm:hidden md:hidden">
+          <button className="border border-3 text-xl border-gray-700 font-semibold rounded-full px-4 py-2 hover:bg-gray-400 lg:flex items-center gap-4 sm:hidden md:hidden">
             <FiDownload />
             Download CV
           </button>
