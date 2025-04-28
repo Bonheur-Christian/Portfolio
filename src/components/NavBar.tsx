@@ -1,28 +1,62 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const NavBarLinks = [
     { link: "/works", name: "Works" },
     { link: "/about", name: "About" },
     { link: "/blog", name: "Blog" },
     { link: "/contact", name: "Contact" },
   ];
+
   return (
-    <div className="sticky top-0 z-50 bg-white">
-      <nav className="w-[80%] mx-auto flex justify-between py-6 pt-12">
+    <div className="sticky top-0 z-50 bg-white shadow-md">
+      <nav className="w-[90%] mx-auto flex justify-between items-center py-6">
+        {/* Logo */}
         <div>
-          <Link href="/" className="text-4xl text-indigo-800 font-extrabold">B</Link>
+          <Link href="/" className="text-4xl text-indigo-800 font-extrabold">
+            B
+          </Link>
         </div>
-        <div>
-          <ul className="flex gap-16 text-lg font-lg">
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex">
+          <ul className="flex gap-12 text-lg font-medium">
             {NavBarLinks.map((item, index) => (
-              <li key={index} className="underline-animation hover:text-indigo-800 hover:font-medium duration-500">
-                <a href={item.link} >{item.name}</a>
+              <li key={index} className="underline-animation hover:text-indigo-800 hover:font-semibold duration-300">
+                <Link href={item.link}>
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
-      </nav>  
+
+        <div className="md:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="text-indigo-800 text-3xl focus:outline-none">
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white px-6 pb-4">
+          <ul className="flex flex-col gap-6 text-lg font-medium">
+            {NavBarLinks.map((item, index) => (
+              <li key={index} className="hover:text-indigo-800 hover:font-semibold duration-300">
+                <Link href={item.link} onClick={() => setMenuOpen(false)}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
