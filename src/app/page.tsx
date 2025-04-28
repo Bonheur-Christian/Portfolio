@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
 
@@ -26,10 +27,37 @@ export default function Home() {
     },
   ];
 
+  const FeaturedWorks = [
+    {
+      imageUrl: "/images/dashboard.png",
+      workName: "Designing DashBoard",
+      year: "2020",
+      workCategory: "Dashboard",
+      workDescription:
+        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+      imageUrl: "/images/dashboard.png",
+      workName: "Designing DashBoard",
+      year: "2020",
+      workCategory: "Dashboard",
+      workDescription:
+        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+      imageUrl: "/images/dashboard.png",
+      workName: "Designing DashBoard",
+      year: "2020",
+      workCategory: "Dashboard",
+      workDescription:
+        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+  ];
+
   return (
     <div className="">
       <NavBar />
-      <div className="flex justify-between items-center py-24 w-[90%] mx-auto">
+      <div className="flex justify-between items-center py-24 w-[80%] mx-auto">
         <div className=" w-[50%] space-y-8">
           <h1 className="text-3xl font-medium">
             I'm MUHUMURE Bonheur Christian, Software developer and Automation
@@ -79,14 +107,19 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <div className="bg-[#EDF7FA] py-10 space-y-4">
-        <div className="flex justify-between items-center w-[90%] mx-auto">
+      <div className="bg-[#EDF7FA] py-24 space-y-4">
+        <div className="flex justify-between items-center w-[80%] mx-auto">
           <p className="text-lg font-lg">Recent Works</p>
-          <p className="text-lg font-lg text-indigo-500">view all</p>
+          <p className="text-lg font-lg text-indigo-500 cursor-pointer">
+            view all
+          </p>
         </div>
-        <div className="flex justify-between items-center space-x-12 w-[90%] mx-auto">
+        <div className="flex justify-between items-center space-x-12 w-[80%] mx-auto">
           {works.map((item, index) => (
-            <div key={index} className="bg-white py-6 px-6 rounded-lg space-y-5">
+            <div
+              key={index}
+              className="bg-white py-10 px-6 rounded-lg space-y-5"
+            >
               <h1 className="text-2xl font-medium">{item.title}</h1>
               <div className="flex items-center gap-4 text-xl text-gray-700">
                 <p className="border-r border-gray-700 pe-6">{item.Date}</p>
@@ -97,6 +130,37 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <div className="w-[80%] mx-auto space-y-6 py-16">
+        <p className="text-xl text-gray-700 font-medium">Featured Works</p>
+        {FeaturedWorks.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-6 border-b-2 border-indigo-800/10 w-[80%] pb-10"
+          >
+            <Image
+              src={item.imageUrl}
+              alt="image"
+              width={300}
+              height={200}
+              className="rounded-lg"
+            />
+            <div className="space-y-6">
+              <h1 className="text-2xl font-bold ">{item.workName}</h1>
+              <div className="flex items-center gap-4">
+                <p className="bg-indigo-900 rounded-full px-4 font-bold text-white">
+                  {item.year}
+                </p>
+                <p className="text-xl font-medium text-gray-700">
+                  {item.workCategory}
+                </p>
+              </div>
+              <p className="w-[70%]">{item.workDescription}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <Footer />
     </div>
   );
 }

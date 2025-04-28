@@ -9,7 +9,7 @@ export default function NavBar() {
   ];
   return (
     <div className="sticky top-0 z-50 bg-white">
-      <nav className="w-[90%] mx-auto flex justify-between py-6 pt-12">
+      <nav className="w-[80%] mx-auto flex justify-between py-6 pt-12">
         <div>
           <Link href="/" className="text-4xl text-indigo-800 font-extrabold">B</Link>
         </div>
