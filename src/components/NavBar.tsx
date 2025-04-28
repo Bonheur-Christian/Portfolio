@@ -21,7 +21,6 @@ export default function NavBar() {
             B
           </Link>
         </div>
-
         <div className="hidden md:flex">
           <ul className="flex gap-12 text-lg font-medium">
             {NavBarLinks.map((item, index) => (
