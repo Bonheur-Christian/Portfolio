@@ -7,23 +7,21 @@ export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const NavBarLinks = [
-    { link: "/works", name: "Works" },
+    { link: "#works", name: "Works" },
     { link: "/about", name: "About" },
     { link: "/blog", name: "Blog" },
-    { link: "/contact", name: "Contact" },
+    { link: "#contact", name: "Contact" },
   ];
 
   return (
-    <div className="sticky top-0 z-50 bg-white shadow-md">
-      <nav className="w-[90%] mx-auto flex justify-between items-center py-6">
-        {/* Logo */}
+    <div className="sticky top-0 z-50 bg-white border-b border-indigo-800/10">
+      <nav className="w-[90%] mx-auto flex justify-between items-center py-12">
         <div>
           <Link href="/" className="text-4xl text-indigo-800 font-extrabold">
             B
           </Link>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex">
           <ul className="flex gap-12 text-lg font-medium">
             {NavBarLinks.map((item, index) => (

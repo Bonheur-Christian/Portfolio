@@ -57,9 +57,9 @@ export default function Home() {
   return (
     <div className="">
       <NavBar />
-      <div className="flex justify-between items-center py-24 w-[80%] mx-auto">
-        <div className=" w-[50%] space-y-8">
-          <h1 className="text-3xl font-medium">
+      <div className="flex lg:flex-row flex-col gap-24 justify-between items-center md:py-24 py-12 lg:w-[80%] md:px-6 sm:px-0 w-full mx-auto">
+        <div className="w-full px-8 md:px-0 lg:w-[50%] space-y-8">
+          <h1 className="text-2xl md:text-3xl font-medium">
             I'm MUHUMURE Bonheur Christian, Software developer and Automation
             Engineer{" "}
           </h1>
@@ -71,7 +71,7 @@ export default function Home() {
             duis enim velit mollit. Exercitation veniam consequat sunt nostrud
             amet.
           </p>
-          <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-sm px-6 py-3 cursor-pointer">
+          <button className="bg-indigo-500 hover:bg-indigo-600 text-white flex mx-auto md:mx-0 font-medium rounded-sm px-6 py-3 cursor-pointer">
             Download Resume
           </button>
         </div>
@@ -107,22 +107,24 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <div className="bg-[#EDF7FA] py-24 space-y-4">
-        <div className="flex justify-between items-center w-[80%] mx-auto">
+      <div className="bg-[#EDF7FA] py-24 space-y-4" id="works">
+        <div className="flex  justify-between items-center lg:w-[80%] w-full px-6 lg:px-0 mx-auto">
           <p className="text-lg font-lg">Recent Works</p>
           <p className="text-lg font-lg text-indigo-500 cursor-pointer">
             view all
           </p>
         </div>
-        <div className="flex justify-between items-center space-x-12 w-[80%] mx-auto">
+        <div className="flex lg:flex-row flex-col justify-between items-center lg:space-x-12 lg:w-[80%] w-full space-y-12 md:space-y-6 lg:space-y-0 mx-auto px-4 lg:px-0">
           {works.map((item, index) => (
             <div
               key={index}
-              className="bg-white py-10 px-6 rounded-lg space-y-5"
+              className="bg-white py-10 md:px-6 px-4 rounded-lg space-y-5 md:text-start text-center"
             >
               <h1 className="text-2xl font-medium">{item.title}</h1>
-              <div className="flex items-center gap-4 text-xl text-gray-700">
-                <p className="border-r border-gray-700 pe-6">{item.Date}</p>
+              <div className="flex md:flex-row flex-col items-center gap-4 text-xl text-gray-700">
+                <p className="md:border-r border-none border-gray-700 pe-6">
+                  {item.Date}
+                </p>
                 <p>{item.JobDone}</p>
               </div>
               <p>{item.description}</p>
@@ -130,12 +132,12 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="w-[80%] mx-auto space-y-6 py-16">
+      <div className="lg:w-[80%] w-full mx-auto space-y-12 py-16 px-6 lg:px-0">
         <p className="text-xl text-gray-700 font-medium">Featured Works</p>
         {FeaturedWorks.map((item, index) => (
           <div
             key={index}
-            className="flex items-center gap-6 border-b-2 border-indigo-800/10 w-[80%] pb-10"
+            className="flex lg:flex-row flex-col items-center gap-6 border-b-2 border-indigo-800/10 lg:w-[80%] w-full pb-10"
           >
             <Image
               src={item.imageUrl}
@@ -144,9 +146,9 @@ export default function Home() {
               height={200}
               className="rounded-lg"
             />
-            <div className="space-y-6">
+            <div className="space-y-6 lg:text-start text-center">
               <h1 className="text-2xl font-bold ">{item.workName}</h1>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center text-center lg:text-start gap-4">
                 <p className="bg-indigo-900 rounded-full px-4 font-bold text-white">
                   {item.year}
                 </p>
@@ -154,10 +156,33 @@ export default function Home() {
                   {item.workCategory}
                 </p>
               </div>
-              <p className="w-[70%]">{item.workDescription}</p>
+              <p className="lg:w-[70%] w-full">{item.workDescription}</p>
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-[80%] mx-auto" id="contact">
+        <h1 className="text-xl text-gray-700 font-medium">Contacts</h1>
+        <ul className="space-y-4 mt-4">
+          <li className="flex items-center gap-4 font-medium text-gray-700">
+            Phone:
+            <span className="text-indigo-800 hover:underline duration-500">
+              +250 795 680 055{" "}
+            </span>
+          </li>
+          <li className="flex items-center gap-4 font-medium text-gray-700">
+            Email:
+            <span className="text-indigo-800 hover:underline duration-500">
+              bonheurchristian16@gmail.com
+            </span>
+          </li>
+          <li className="flex items-center gap-4 text-gray-700 font-medium ">
+            WhatsApp:
+            <span className="text-indigo-800 hover:underline duration-500">
+              +250 726 711 232
+            </span>
+          </li>
+        </ul>
       </div>
 
       <Footer />
