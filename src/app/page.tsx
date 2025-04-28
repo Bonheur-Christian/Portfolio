@@ -64,12 +64,20 @@ export default function Home() {
             Engineer{" "}
           </h1>
           <p className="text-xl text-gray-700">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
-            ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-            duis enim velit mollit. Exercitation veniam consequat sunt nostrud
-            amet.
+            I grew up in rural area, In Gicumbi District. In my childhood , I
+            was really curious about Technology and how it works. I was always
+            interested in learning new things and solving problems. I started my
+            journey in programming when I was in junior high school (O Level). I
+            Applied for Rwanda Coding Academy and I was selected. I started
+            learning programming languages like HTML/CSS, Javascript (Vanilla +
+            Node JS) and C in my first year. In My forst year also I learned
+            about databases and web development. In My second year I learned
+            about Python, Java, C++, and Solidity. I also learned about software
+            development.
+          </p>
+          <p className="text-xl text-gray-700">
+            This Time I am operating as a Software developer and Automation
+            Engineer who found his passion in Programming and Embedded systems.
           </p>
           <button className="bg-indigo-500 hover:bg-indigo-600 text-white flex mx-auto md:mx-0 font-medium rounded-sm px-6 py-3 cursor-pointer">
             Download Resume
@@ -122,9 +130,7 @@ export default function Home() {
             >
               <h1 className="text-2xl font-medium">{item.title}</h1>
               <div className="flex md:flex-row flex-col items-center gap-4 text-xl text-gray-700">
-                <p className="md:border-r border-none border-gray-700 pe-6">
-                  {item.Date}
-                </p>
+                <p className="bg-gray-100 px-4 py-2">{item.Date}</p>
                 <p>{item.JobDone}</p>
               </div>
               <p>{item.description}</p>
