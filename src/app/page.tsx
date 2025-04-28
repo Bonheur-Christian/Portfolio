@@ -1,29 +1,32 @@
+"use client";
+
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const works = [
     {
-      title: "Library MIS",
-      Date: "10 April 2025",
-      JobDone: "Design and Development",
+      title: "UMURAVA Education Platform",
+      Date: "10 November 2024",
+      JobDone: "Dashboard Frotend Development",
       description:
-        "This is Library Management system that eases Overall Job Done By School Librarians. It enables lending and managing books in Library.",
+        "Umurava Ed-Tech is platform designed to help students Learn some Lessons online. It also consist of Hackathons and skill challenges to see Learning level of students. This Increased my Experience in Frontend Development.",
     },
     {
       title: "Library MIS",
       Date: "10 April 2025",
-      JobDone: "Design and Development",
+      JobDone: "Full Stack Development",
       description:
         "This is Library Management system that eases Overall Job Done By School Librarians. It enables lending and managing books in Library.",
     },
     {
-      title: "Library MIS",
-      Date: "10 April 2025",
-      JobDone: "Design and Development",
+      title: "Eternal Prize Publishers",
+      Date: "3 June 2024",
+      JobDone: "Full Stack Development",
       description:
-        "This is Library Management system that eases Overall Job Done By School Librarians. It enables lending and managing books in Library.",
+        "This is system That I designed and developed for Eternal Prize Company. Eternal Prize company is a publishing company that print and publishes books and other materials. This system helps them to manage their books and other materials.",
     },
   ];
 
@@ -54,11 +57,36 @@ export default function Home() {
     },
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
   return (
     <div className="">
       <NavBar />
-      <div className="flex lg:flex-row flex-col gap-24 justify-between items-center md:py-24 py-12 lg:w-[80%] md:px-6 sm:px-0 w-full mx-auto">
-        <div className="w-full px-8 md:px-0 lg:w-[50%] space-y-8">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="flex lg:flex-row flex-col gap-24 justify-between items-center md:py-24 py-12 lg:w-[80%] md:px-6 sm:px-0 w-full mx-auto"
+      >
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="w-full px-8 md:px-0 lg:w-[50%] space-y-8"
+        >
           <h1 className="text-2xl md:text-3xl font-medium">
             I'm MUHUMURE Bonheur Christian, Software developer and Automation
             Engineer{" "}
@@ -79,11 +107,19 @@ export default function Home() {
             This Time I am operating as a Software developer and Automation
             Engineer who found his passion in Programming and Embedded systems.
           </p>
-          <button className="bg-indigo-500 hover:bg-indigo-600 text-white flex mx-auto md:mx-0 font-medium rounded-sm px-6 py-3 cursor-pointer">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-indigo-500 hover:bg-indigo-600 text-white flex mx-auto md:mx-0 font-medium rounded-sm px-6 py-3 cursor-pointer"
+          >
             Download Resume
-          </button>
-        </div>
-        <div>
+          </motion.button>
+        </motion.div>
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="400px"
@@ -113,83 +149,135 @@ export default function Home() {
               fill="#3F51B5"
             />
           </svg>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <div className="bg-[#EDF7FA] py-24 space-y-4" id="works">
-        <div className="flex  justify-between items-center lg:w-[80%] w-full px-6 lg:px-0 mx-auto">
-          <p className="text-lg font-lg">Recent Works</p>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-between items-center lg:w-[80%] w-full px-6 lg:px-0 mx-auto"
+        >
+          <p className="text-xl text-gray-700 font-medium">Recent Works</p>
           <p className="text-lg font-lg text-indigo-500 cursor-pointer">
             view all
           </p>
-        </div>
+        </motion.div>
+
         <div className="flex lg:flex-row flex-col justify-between items-center lg:space-x-12 lg:w-[80%] w-full space-y-12 md:space-y-6 lg:space-y-0 mx-auto px-4 lg:px-0">
           {works.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white py-10 md:px-6 px-4 rounded-lg space-y-5 md:text-start text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white py-10 md:px-6 px-4 rounded-lg space-y-5 md:text-start text-center overflow-auto"
             >
-              <h1 className="text-2xl font-medium">{item.title}</h1>
+              <h1 className="text-2xl font-medium truncate" title={item.title}>
+                {item.title}
+              </h1>
               <div className="flex md:flex-row flex-col items-center gap-4 text-xl text-gray-700">
-                <p className="bg-gray-100 px-4 py-2">{item.Date}</p>
-                <p>{item.JobDone}</p>
+                <p className="bg-gray-100 px-4 py-2 truncate" title={item.Date}>
+                  {item.Date}
+                </p>
+                <p className="truncate" title={item.JobDone}>
+                  {item.JobDone}
+                </p>
               </div>
-              <p>{item.description}</p>
-            </div>
+              <p className="line-clamp-3" title={item.description}>
+                {item.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>
-      <div className="lg:w-[80%] w-full mx-auto space-y-12 py-16 px-6 lg:px-0">
-        <p className="text-xl text-gray-700 font-medium">Featured Works</p>
-        {FeaturedWorks.map((item, index) => (
-          <div
+      <motion.div
+        className="lg:w-[80%] w-full mx-auto space-y-12 py-16 px-6 lg:px-0"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.p className="text-xl text-gray-700 font-medium" variants={item}>
+          Featured Works
+        </motion.p>
+
+        {FeaturedWorks.map((itemData, index) => (
+          <motion.div
             key={index}
             className="flex lg:flex-row flex-col items-center gap-6 border-b-2 border-indigo-800/10 lg:w-[80%] w-full pb-10"
+            variants={item}
           >
             <Image
-              src={item.imageUrl}
+              src={itemData.imageUrl}
               alt="image"
               width={300}
               height={200}
               className="rounded-lg"
             />
             <div className="space-y-6 lg:text-start text-center">
-              <h1 className="text-2xl font-bold ">{item.workName}</h1>
+              <h1 className="text-2xl font-bold">{itemData.workName}</h1>
               <div className="flex items-center text-center lg:text-start gap-4">
                 <p className="bg-indigo-900 rounded-full px-4 font-bold text-white">
-                  {item.year}
+                  {itemData.year}
                 </p>
                 <p className="text-xl font-medium text-gray-700">
-                  {item.workCategory}
+                  {itemData.workCategory}
                 </p>
               </div>
-              <p className="lg:w-[70%] w-full">{item.workDescription}</p>
+              <p className="lg:w-[70%] w-full">{itemData.workDescription}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <div className="w-[80%] mx-auto" id="contact">
+      </motion.div>
+      <motion.div
+        id="contact"
+        className="w-[80%] mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h1 className="text-xl text-gray-700 font-medium">Contacts</h1>
-        <ul className="space-y-4 mt-4">
-          <li className="flex items-center gap-4 font-medium text-gray-700">
-            Phone:
-            <span className="text-indigo-800 hover:underline duration-500">
-              +250 795 680 055{" "}
-            </span>
-          </li>
-          <li className="flex items-center gap-4 font-medium text-gray-700">
-            Email:
-            <span className="text-indigo-800 hover:underline duration-500">
-              bonheurchristian16@gmail.com
-            </span>
-          </li>
-          <li className="flex items-center gap-4 text-gray-700 font-medium ">
-            WhatsApp:
-            <span className="text-indigo-800 hover:underline duration-500">
-              +250 726 711 232
-            </span>
-          </li>
-        </ul>
-      </div>
+
+        <motion.ul
+          className="space-y-4 mt-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2, // Animate each contact one by one
+              },
+            },
+          }}
+        >
+          {[
+            { label: "Phone", value: "+250 795 680 055" },
+            { label: "Email", value: "bonheurchristian16@gmail.com" },
+            { label: "WhatsApp", value: "+250 726 711 232" },
+          ].map((contact, index) => (
+            <motion.li
+              key={index}
+              className="flex items-center gap-4 font-medium text-gray-700"
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              {contact.label}:
+              <span className="text-indigo-800 hover:underline duration-500">
+                {contact.value}
+              </span>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </motion.div>
 
       <Footer />
     </div>

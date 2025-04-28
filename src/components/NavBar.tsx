@@ -8,7 +8,6 @@ export default function NavBar() {
 
   const NavBarLinks = [
     { link: "#works", name: "Works" },
-    { link: "/about", name: "About" },
     { link: "/blog", name: "Blog" },
     { link: "#contact", name: "Contact" },
   ];
@@ -40,7 +39,6 @@ export default function NavBar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white px-6 pb-4">
           <ul className="flex flex-col gap-6 text-lg font-medium">
