@@ -3,5 +3,31 @@
 
 
 body {
+  font-family: var(--font-quicksand), sans-serif;
   overflow-x: hidden;
 }
+
+@layer components {
+  .underline-animation {
+    @apply relative;
+  }
+  
+  .underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    left: 0;
+    bottom: -2px;
+    background-color: #283593;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s;
+  }
+  
+  .underline-animation:hover::after {
+    transform: scaleX(1.1);
+  }
+}
+
+

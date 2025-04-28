@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NavBar() {
   const NavBarLinks = [
     { link: "/works", name: "Works" },
@@ -6,16 +8,21 @@ export default function NavBar() {
     { link: "/contact", name: "Contact" },
   ];
   return (
-    <div>
-      <nav>
-        <ul>
-          {NavBarLinks.map((item, index) => (
-            <li key={index}>
-              <a href={item.link}>{item.name}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <div className="">
+      <nav className="flex justify-between py-6 pt-12 border-b border-b-indigo-800/10">
+        <div>
+          <Link href="/" className="text-4xl text-indigo-800 font-extrabold">B</Link>
+        </div>
+        <div>
+          <ul className="flex gap-16 text-lg font-lg">
+            {NavBarLinks.map((item, index) => (
+              <li key={index} className="underline-animation hover:text-indigo-800 hover:font-medium duration-500">
+                <a href={item.link} >{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>  
     </div>
   );
 }
